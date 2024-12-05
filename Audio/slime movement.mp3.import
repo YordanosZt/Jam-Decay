@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://7c05unyydcgt"
+path="res://.godot/imported/slime movement.mp3-c88315a6df8248de29929e0a3eeb5506.mp3str"
+
+[deps]
+
+source_file="res://Audio/slime movement.mp3"
+dest_files=["res://.godot/imported/slime movement.mp3-c88315a6df8248de29929e0a3eeb5506.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

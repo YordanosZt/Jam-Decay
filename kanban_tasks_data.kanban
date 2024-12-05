@@ -1,0 +1,68 @@
+{
+	"categories": [
+		{
+			"uuid": "ff58f700-2b0b-4d48-963b-3a60e8552674",
+			"title": "Task",
+			"color": "70bafa"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "3421bcfc-48c4-4874-a2ab-ce830edeafac",
+			"title": "Todo",
+			"tasks": [
+				"9dd13ca5-83c0-4588-ab75-9a774a469558"
+			]
+		},
+		{
+			"uuid": "7932eb80-15d9-4023-878b-c21b5729556d",
+			"title": "Doing",
+			"tasks": [
+				"cd6be2da-4375-4de4-a6ad-701aac5b7d80"
+			]
+		},
+		{
+			"uuid": "fa477017-9442-4262-a6e4-85cb344895db",
+			"title": "Done",
+			"tasks": [
+				"6abef489-75c8-4d42-90b8-1bdfdee1a4e8"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "6abef489-75c8-4d42-90b8-1bdfdee1a4e8",
+			"title": "Visuals",
+			"description": "",
+			"category": "ff58f700-2b0b-4d48-963b-3a60e8552674",
+			"steps": []
+		},
+		{
+			"uuid": "cd6be2da-4375-4de4-a6ad-701aac5b7d80",
+			"title": "Audio",
+			"description": "",
+			"category": "ff58f700-2b0b-4d48-963b-3a60e8552674",
+			"steps": []
+		},
+		{
+			"uuid": "9dd13ca5-83c0-4588-ab75-9a774a469558",
+			"title": "Juice",
+			"description": "",
+			"category": "ff58f700-2b0b-4d48-963b-3a60e8552674",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"3421bcfc-48c4-4874-a2ab-ce830edeafac"
+			],
+			[
+				"7932eb80-15d9-4023-878b-c21b5729556d"
+			],
+			[
+				"fa477017-9442-4262-a6e4-85cb344895db"
+			]
+		]
+	}
+}

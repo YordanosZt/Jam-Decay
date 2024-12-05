@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://c75cn87ksd1xy"]
+
+[ext_resource type="Script" path="res://Scripts/sworm.gd" id="1_s8scb"]
+[ext_resource type="PackedScene" uid="uid://coqv61jyh8608" path="res://Scenes/bacteria.tscn" id="2_ph5ru"]
+[ext_resource type="Texture2D" uid="uid://bxa0vjrvtb3n6" path="res://Sprites/bacteria.png" id="3_4xuur"]
+[ext_resource type="Texture2D" uid="uid://bjxv4t0yvepty" path="res://Sprites/crosshair007.png" id="3_x731m"]
+[ext_resource type="AudioStream" uid="uid://dxjwyw3luovgl" path="res://Audio/whoosh.mp3" id="4_e7q3w"]
+[ext_resource type="AudioStream" uid="uid://7c05unyydcgt" path="res://Audio/slime movement.mp3" id="5_8mrd1"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_sv06g"]
+
+[node name="Sworm" type="Node2D"]
+script = ExtResource("1_s8scb")
+bacteria = ExtResource("2_ph5ru")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="Crosshair" type="Node2D" parent="."]
+position = Vector2(78, -9)
+
+[node name="Sprite2D" type="Sprite2D" parent="Crosshair"]
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("3_x731m")
+
+[node name="BacteriaContainer" type="Node2D" parent="."]
+
+[node name="Bacteria" parent="BacteriaContainer" instance=ExtResource("2_ph5ru")]
+
+[node name="Bacteria2" parent="BacteriaContainer" instance=ExtResource("2_ph5ru")]
+position = Vector2(11, 6)
+
+[node name="Bacteria3" parent="BacteriaContainer" instance=ExtResource("2_ph5ru")]
+position = Vector2(-10, 11)
+
+[node name="Bacteria4" parent="BacteriaContainer" instance=ExtResource("2_ph5ru")]
+position = Vector2(-12, -3)
+
+[node name="Bacteria5" parent="BacteriaContainer" instance=ExtResource("2_ph5ru")]
+position = Vector2(9, -10)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BacteriaCountLabel" type="Label" parent="CanvasLayer"]
+offset_left = 48.0
+offset_right = 192.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 32
+text = "10"
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(29, 31)
+rotation = 0.425634
+scale = Vector2(0.112, 0.112)
+texture = ExtResource("3_4xuur")
+
+[node name="SwormPivot" type="MeshInstance2D" parent="."]
+modulate = Color(1, 1, 1, 0.156863)
+scale = Vector2(10.0113, 10.0113)
+mesh = SubResource("SphereMesh_sv06g")
+
+[node name="ShootAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_e7q3w")
+
+[node name="MoveAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8mrd1")

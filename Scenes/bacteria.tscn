@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://coqv61jyh8608"]
+
+[ext_resource type="Script" path="res://Scripts/bacteria.gd" id="1_w56ac"]
+[ext_resource type="Texture2D" uid="uid://bxa0vjrvtb3n6" path="res://Sprites/bacteria.png" id="2_tp6lu"]
+[ext_resource type="AudioStream" uid="uid://88ea5mcenbhl" path="res://Audio/slime death.mp3" id="3_tihgy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28bse"]
+size = Vector2(8, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibcfi"]
+radius = 24.0
+
+[node name="Bacteria" type="Area2D" groups=["Bacteria"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_w56ac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_28bse")
+
+[node name="BacteriaDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BacteriaDetector"]
+shape = SubResource("CircleShape2D_ibcfi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.032, 0.032)
+texture = ExtResource("2_tp6lu")
+
+[node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tihgy")
+
+[connection signal="area_entered" from="BacteriaDetector" to="." method="_on_bacteria_detector_area_entered"]
+[connection signal="area_exited" from="BacteriaDetector" to="." method="_on_bacteria_detector_area_exited"]

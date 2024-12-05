@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdlq3iwbkd762"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_5nja1"]
+[ext_resource type="Texture2D" uid="uid://bp3jr1rujkgxd" path="res://Sprites/bleach-drawing-clip-art-glass-of-milk-clipart-cc16871b9b3da784d2b68f181b0ef4b9.png" id="2_5h005"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_osmoi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31dqb"]
+size = Vector2(16, 16)
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_5nja1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+modulate = Color(1, 0.439216, 0.2, 1)
+z_index = 10
+scale = Vector2(16, 16)
+mesh = SubResource("BoxMesh_osmoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_31dqb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0272109, 0.0272109)
+texture = ExtResource("2_5h005")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
